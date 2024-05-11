@@ -4,30 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             flex-direction: column;
+            background: linear-gradient(135deg, #5b909c, #4334626a);
+            animation: backgroundShift 10s ease infinite;
+        }
+        h1, h2 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeIn 2s ease-out;
         }
         a {
             text-decoration: none;
-            color: lightgray;
-            background-color: #333;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px 20px;
             margin: 5px;
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border-radius: 5px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
         }
         a:hover {
-            background-color: #555;
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+            color: #fff;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes backgroundShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
     </style>
 </head>
